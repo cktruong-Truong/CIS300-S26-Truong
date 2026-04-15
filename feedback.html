@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback — ChrisTruongDoes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="lightbox.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="cktdoeslogo.png" alt="CKT Does Logo" class="logo-img" />
+    <h1 class="site-title">ChrisTruongDoes</h1>
+  </header>
+
+  <nav class="site-nav">
+    <span class="nav-label">Nav</span>
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="projects.html">Projects</a>
+    <a href="creative.html">Creative</a>
+    <a href="feedback.html" class="active">Feedback</a>
+  </nav>
+
+  <main class="feedback-wrap">
+    <div class="feedback-card">
+      <h2>Feedback</h2>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason of contact</label>
+        <select id="reason" name="reason">
+          <option value="" disabled selected>Select a reason…</option>
+          <option value="inquiry">Inquiry</option>
+          <option value="feedback">Feedback</option>
+          <option value="criticism">Criticism</option>
+          <option value="recommendation">Recommendation</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea id="comment" name="comment" placeholder="Write your message here…"></textarea>
+      </div>
+
+      <div class="form-checkbox-group">
+        <span class="checkbox-label-text">Would you like to be contacted about your form?</span>
+        <div class="checkbox-options">
+          <label class="checkbox-option">
+            <input type="checkbox" id="contact-yes" name="contact" value="yes" onchange="handleCheckbox('yes')" />
+            Yes
+          </label>
+          <label class="checkbox-option">
+            <input type="checkbox" id="contact-no" name="contact" value="no" onchange="handleCheckbox('no')" checked />
+            No
+          </label>
+        </div>
+      </div>
+
+      <button class="btn-submit" onclick="submitForm()">Submit</button>
+      <div class="success-msg" id="success-msg">Thanks for reaching out! I'll get back to you soon.</div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">ChrisTruongDoes &copy; 2025</span>
+      <div class="footer-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">FSAE</a>
+        <a href="#">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleCheckbox(val) {
+      document.getElementById('contact-yes').checked = (val === 'yes');
+      document.getElementById('contact-no').checked  = (val === 'no');
+    }
+
+    function submitForm() {
+      var name    = document.getElementById('name').value.trim();
+      var email   = document.getElementById('email').value.trim();
+      var reason  = document.getElementById('reason').value;
+      var comment = document.getElementById('comment').value.trim();
+
+      if (!name || !email || !reason || !comment) {
+        alert('Please fill in all fields before submitting.');
+        return;
+      }
+
+      /* ── HOW TO ACTUALLY SEND THIS FORM ───────────────────────
+         The easiest free option is Formspree (no backend needed):
+           1. Go to https://formspree.io and create a free account
+           2. Create a new form — you'll get an endpoint like:
+              https://formspree.io/f/abcdefgh
+           3. Replace the fetch URL below with your endpoint
+           4. Uncomment the fetch block and delete the console.log line
+      ────────────────────────────────────────────────────────── */
+
+      // fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ name: name, email: email, reason: reason, comment: comment })
+      // });
+
+      console.log('Form submitted:', { name, email, reason, comment });
+
+      document.getElementById('success-msg').style.display = 'block';
+      document.getElementById('name').value    = '';
+      document.getElementById('email').value   = '';
+      document.getElementById('reason').value  = '';
+      document.getElementById('comment').value = '';
+      document.getElementById('contact-no').checked  = true;
+      document.getElementById('contact-yes').checked = false;
+    }
+  </script>
+  <script src="lightbox.js"></script>
+</body>
+</html>
