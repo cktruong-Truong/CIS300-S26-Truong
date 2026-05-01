@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — ChrisTruongDoes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="lightbox.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="cktdoeslogo.png" alt="CKT Does Logo" class="logo-img" />
+    <h1 class="site-title">ChrisTruongDoes</h1>
+  </header>
+
+  <nav class="site-nav">
+    <span class="nav-label">Nav</span>
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="creative.html">Creative</a>
+    <a href="feedback.html">Feedback</a>
+  </nav>
+
+  <main class="projects-wrap">
+
+    <div class="projects-header">
+      <h2>Projects</h2>
+      <p>Click any project to expand details and photos.</p>
+    </div>
+
+    <div class="project-accordion">
+
+      <!-- ── PROJECT 1 ── -->
+      <div class="project-item">
+        <button class="project-trigger" onclick="toggleProject(this)">
+          <div class="project-trigger-left">
+            <span class="project-tag">FSAE</span>
+            <span class="project-title">2026 SDM Throwback Livery Design</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span class="project-year">2025-26</span>
+            <svg class="project-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="project-body">
+          <p class="project-description">
+            Designed a throwback livery dedicated to Sun Devil Motorsports 1993 competition car, celebrating 40 years of the clubs existance for our 2nd Annual Southwest Shootout event. The project used Adobe Illustrator to design and map out the decals to scale so I could cut more efficiently. 
+          </p>
+          <div class="project-images">
+            <div class="project-img-slot"><img src="18-DSC_0250.jpg" alt="SWS ASU" class="lb-img" /></div>
+            <div class="project-img-slot"><img src="93 2 001 (3).jpg" alt="1993 ASU car" class="lb-img" /></div>
+            <div class="project-img-slot"><img src="Screenshot 2026-04-30 221203.png" alt="Adobe file" class="lb-img" /></div>
+          </div>
+          <div class="project-meta">
+            <span class="project-meta-chip">Adobe Illustrator</span>
+            <span class="project-meta-chip">Vinyl</span>
+            <span class="project-meta-chip">Sun Devil Motorsports</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PROJECT 2 ── -->
+      <div class="project-item">
+        <button class="project-trigger" onclick="toggleProject(this)">
+          <div class="project-trigger-left">
+            <span class="project-tag">Design</span>
+            <span class="project-title">Competition Livery Design 2026</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span class="project-year">2025</span>
+            <svg class="project-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="project-body">
+          <p class="project-description">
+            This livery was months in the making. Starting immediately after our arrival after competition, I wanted to make a livery that would stand out from the rest of the FSAE world, and after a final push to get the car ready for our unveiling event, my biggest project ever was finally complete. This project was sponsored by RVINYL who gave our club the neccesary tools inorder to complete this project with the highest precision. Adobe Illustrator was used to map and plan all the decal and get intial measurement cuts.
+          </p>
+          <div class="project-images">
+            <div class="project-img-slot"><img src="liverywip.png" alt="Livery WIP" class="lb-img" /></div>
+            <div class="project-img-slot"><img src="IMG_2039.JPG" alt="2026 car" class="lb-img" /></div>
+            <div class="project-img-slot"><img src="IMG_3128.jpg" alt="2026 car" class="lb-img" /></div>
+            <div class="project-img-slot"><img src="1000007972.jpg" alt="2026 Unveil" class="lb-img" /></div>
+          </div>
+          <div class="project-meta">
+            <span class="project-meta-chip">Graphic Design</span>
+            <span class="project-meta-chip">Adobe Illustrator</span>
+            <span class="project-meta-chip">Vinyl</span>
+            <span class="project-meta-chip">Sun Devil Motorsports</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TEMPLATE — copy this block to add a new project ──
+      <div class="project-item">
+        <button class="project-trigger" onclick="toggleProject(this)">
+          <div class="project-trigger-left">
+            <span class="project-tag">Tag</span>
+            <span class="project-title">Project Title</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span class="project-year">2025</span>
+            <svg class="project-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class="project-body">
+          <p class="project-description">Description of the project.</p>
+          <div class="project-images">
+            <div class="project-img-slot"><img src="your-image.jpg" alt="Description" class="lb-img" /></div>
+          </div>
+          <div class="project-meta">
+            <span class="project-meta-chip">Skill</span>
+          </div>
+        </div>
+      </div>
+      ── END TEMPLATE ── -->
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">ChrisTruongDoes &copy; 2025</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/cktruong">LinkedIn</a>
+        <a href="https://sundevilmotorsports.com/">FSAE</a>
+        <a href="mailto:christruong@email.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleProject(btn) {
+      var item = btn.closest('.project-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.project-item.open').forEach(function (el) { el.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+  <script src="lightbox.js"></script>
+</body>
+</html>
